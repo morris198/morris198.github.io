@@ -641,7 +641,7 @@
                 
                 <p>My passion lies in leveraging AI and machine learning models for cybersecurity, including threat detection, incident response, and security automation. I combine deep understanding of production systems with cutting-edge ML techniques to build robust, scalable security infrastructure that protects against evolving threats.</p>
                 
-                <p>Currently pursuing advanced cybersecurity certifications while contributing to AI security platforms and developing fraud detection systems with 95% precision rates.</p>
+                <p>Currently pursuing advanced cybersecurity certifications while contributing to AI security platforms and developing fraud detection systems with 95% precision rates. I have a proven track record monitoring production systems, analyzing workflows, and implementing automated solutions with strong experience in system security, anomaly detection, and process optimization.</p>
             </div>
         </div>
     </section>
@@ -654,11 +654,12 @@
                 <div class="skill-category fade-in">
                     <h3><i class="fas fa-shield-alt"></i> Cybersecurity & AI</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">MITRE ATT&CK</span>
+                        <span class="skill-tag">MITRE ATT&CK Framework</span>
                         <span class="skill-tag">Incident Response</span>
-                        <span class="skill-tag">SIEM</span>
+                        <span class="skill-tag">SIEM Basics</span>
                         <span class="skill-tag">Security ML Models</span>
                         <span class="skill-tag">Fraud Detection</span>
+                        <span class="skill-tag">Anomaly Detection</span>
                     </div>
                 </div>
                 
@@ -669,6 +670,7 @@
                         <span class="skill-tag">FastAPI</span>
                         <span class="skill-tag">RESTful APIs</span>
                         <span class="skill-tag">OpenAPI/Swagger</span>
+                        <span class="skill-tag">Microservices</span>
                     </div>
                 </div>
                 
@@ -680,6 +682,18 @@
                         <span class="skill-tag">Wireshark</span>
                         <span class="skill-tag">Microsoft Defender</span>
                         <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">pfSense</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-network-wired"></i> Networking & Protocols</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TCP/IP</span>
+                        <span class="skill-tag">DNS</span>
+                        <span class="skill-tag">HTTP/HTTPS</span>
+                        <span class="skill-tag">Network Analysis</span>
+                        <span class="skill-tag">Packet Analysis</span>
                     </div>
                 </div>
                 
@@ -699,7 +713,8 @@
                         <span class="skill-tag">AWS EC2</span>
                         <span class="skill-tag">AWS S3</span>
                         <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">CI/CD Pipelines</span>
+                        <span class="skill-tag">Git</span>
                     </div>
                 </div>
                 
@@ -828,4 +843,246 @@
                     <h3>Certifications in Progress</h3>
                     <div class="cert-progress">
                         <i class="fas fa-clock"></i> CompTIA CYSA+ (Sept 2025)
-                    </div
+                    </div>
+                    <div class="cert-progress">
+                        <i class="fas fa-clock"></i> GIAC Incident Handler (GCIH) (Dec 2025)
+                    </div>
+                    <div class="cert-progress">
+                        <i class="fas fa-clock"></i> Certified Ethical Hacker (CEH) (Oct 2025)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Morris Holder Jr. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/morris-holder-94408610a/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/morris198/" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:morrisholder00@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+1-470-513-7578">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const toggle = document.querySelector('.mobile-menu-toggle i');
+            
+            navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                toggle.classList.remove('fa-bars');
+                toggle.classList.add('fa-times');
+            } else {
+                toggle.classList.remove('fa-times');
+                toggle.classList.add('fa-bars');
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                const toggle = document.querySelector('.mobile-menu-toggle i');
+                
+                navLinks.classList.remove('active');
+                toggle.classList.remove('fa-times');
+                toggle.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const heroTitle = document.querySelector('.hero h1');
+                if (heroTitle) {
+                    typeWriter(heroTitle, 'Morris Holder Jr', 150);
+                }
+            }, 500);
+        });
+
+        // Add dynamic background particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = Math.random() * 4 + 1 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = 'rgba(255, 255, 255, 0.3)';
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = '100vh';
+            particle.style.pointerEvents = 'none';
+            particle.style.animation = `floatUp ${Math.random() * 3 + 2}s linear forwards`;
+            
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 5000);
+            }
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 300);
+
+        // Smooth scroll offset for fixed header
+        window.addEventListener('load', () => {
+            const header = document.querySelector('.header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            
+            // Adjust scroll position for anchor links
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - headerHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const navLinks = document.getElementById('navLinks');
+            const toggle = document.querySelector('.mobile-menu-toggle i');
+            
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                toggle.classList.remove('fa-times');
+                toggle.classList.add('fa-bars');
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease-in-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Lazy load images and optimize performance
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add smooth hover effects
+        document.querySelectorAll('.skill-category, .project-card, .experience-item, .education-item, .certification-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    </script>
+</body>
+</html>
