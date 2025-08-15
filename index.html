@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morris Holder Jr - Python Engineer</title>
+    <title>Morris Holder Jr - Security AI Engineer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -67,8 +68,18 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links a.active {
             color: #667eea;
+            font-weight: 600;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
         }
 
         /* Hero Section */
@@ -103,21 +114,21 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
             opacity: 0;
             animation: fadeInUp 1s 0.5s forwards;
         }
 
         .hero .subtitle {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             margin-bottom: 1rem;
             opacity: 0;
             animation: fadeInUp 1s 0.7s forwards;
         }
 
         .hero .location {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             margin-bottom: 2rem;
             opacity: 0;
             animation: fadeInUp 1s 0.9s forwards;
@@ -140,6 +151,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: transform 0.3s;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
         }
 
         .contact-info a:hover {
@@ -158,6 +170,7 @@
             backdrop-filter: blur(10px);
             opacity: 0;
             animation: fadeInUp 1s 1.3s forwards;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
         }
 
         .cta-button:hover {
@@ -189,7 +202,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             margin-bottom: 3rem;
             color: #333;
             position: relative;
@@ -211,7 +224,7 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             line-height: 1.8;
             color: #555;
         }
@@ -219,7 +232,7 @@
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -240,7 +253,7 @@
         .skill-category h3 {
             color: #667eea;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
         }
 
         .skill-tags {
@@ -254,14 +267,14 @@
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
             font-weight: 500;
         }
 
         /* Experience Section */
         .experience-item {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             margin-bottom: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -289,13 +302,13 @@
         }
 
         .company {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
             font-weight: bold;
             color: #667eea;
         }
 
         .position {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             color: #333;
             margin-bottom: 0.5rem;
         }
@@ -303,6 +316,8 @@
         .duration {
             color: #666;
             font-weight: 500;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            white-space: nowrap;
         }
 
         .experience-item ul {
@@ -314,6 +329,8 @@
             margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            line-height: 1.6;
         }
 
         .experience-item li::before {
@@ -326,7 +343,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -346,7 +363,7 @@
 
         .project-title {
             color: #667eea;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
             margin-bottom: 1rem;
             font-weight: bold;
         }
@@ -355,6 +372,7 @@
             color: #555;
             line-height: 1.6;
             margin-bottom: 1rem;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
         }
 
         .project-features {
@@ -366,6 +384,8 @@
             padding-left: 1.5rem;
             position: relative;
             color: #555;
+            font-size: clamp(0.85rem, 1.7vw, 0.95rem);
+            line-height: 1.5;
         }
 
         .project-features li::before {
@@ -377,41 +397,59 @@
         }
 
         /* Education Section */
-        .education-item {
+        .education-certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .education-item, .certification-item {
             background: white;
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
-        .education-item h3 {
+        .education-item h3, .certification-item h3 {
             color: #667eea;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.4vw, 1.5rem);
             margin-bottom: 0.5rem;
         }
 
         .degree {
             color: #333;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             margin-bottom: 1rem;
         }
 
         .coursework {
             color: #666;
             font-style: italic;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
         }
 
         .certification {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             display: inline-block;
-            margin-top: 1rem;
+            margin: 0.5rem;
             font-weight: 500;
+            font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+        }
+
+        .cert-progress {
+            background: linear-gradient(135deg, #ffa726 0%, #ff7043 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 0.5rem;
+            font-weight: 500;
+            font-size: clamp(0.8rem, 1.6vw, 0.9rem);
         }
 
         /* Footer */
@@ -424,17 +462,19 @@
 
         .footer p {
             margin-bottom: 1rem;
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .social-links a {
             color: white;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.4vw, 1.5rem);
             transition: color 0.3s, transform 0.3s;
         }
 
@@ -443,23 +483,53 @@
             transform: translateY(-2px);
         }
 
-        /* Responsive Design */
+        /* Mobile Specific Styles */
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
+            .container {
+                padding: 0 15px;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+                padding: 0.5rem 0;
+            }
+
+            .hero {
+                padding: 6rem 0 2rem;
+                min-height: 100vh;
             }
 
             .contact-info {
-                flex-direction: column;
                 gap: 1rem;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
 
             .experience-header {
                 flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
             }
 
             .projects-grid {
@@ -468,6 +538,30 @@
 
             .skills-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .education-certifications {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .skill-category, .project-card, .experience-item, .education-item, .certification-item {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-info a {
+                justify-content: center;
+                width: 100%;
+                padding: 0.5rem;
+            }
+
+            .hero {
+                padding: 5rem 0 2rem;
             }
         }
 
@@ -482,6 +576,14 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Floating particles animation */
+        @keyframes floatUp {
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -489,7 +591,10 @@
     <header class="header">
         <nav class="nav container">
             <div class="logo">Morris Holder Jr</div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -505,7 +610,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Morris Holder Jr</h1>
-                <p class="subtitle">Backend Python Engineer & AI Platform Developer</p>
+                <p class="subtitle">Security AI Engineer & Cybersecurity Specialist</p>
                 <p class="location"><i class="fas fa-map-marker-alt"></i> Atlanta, GA</p>
                 
                 <div class="contact-info">
@@ -533,9 +638,11 @@
         <div class="container">
             <h2 class="section-title fade-in">About Me</h2>
             <div class="about-content fade-in">
-                <p>I'm a Backend Software Engineer with 4+ years of enterprise systems experience and 1+ year building Python-based APIs and microservices. I have a proven track record monitoring production systems, analyzing workflows, and implementing automated solutions.</p>
+                <p>I'm a Security AI Engineer specializing in Machine Learning Operations for cybersecurity applications. With 4+ years of enterprise systems experience and growing expertise in Python-based APIs, AI platform development, and security operations, I focus on building intelligent security solutions.</p>
                 
-                <p>With strong experience in system security, anomaly detection, and process optimization, I'm currently developing scalable REST APIs with FastAPI and deploying containerized applications on AWS. I'm passionate about leveraging my deep understanding of production systems and growing backend development expertise to build robust, scalable infrastructure.</p>
+                <p>My passion lies in leveraging AI and machine learning models for cybersecurity, including threat detection, incident response, and security automation. I combine deep understanding of production systems with cutting-edge ML techniques to build robust, scalable security infrastructure that protects against evolving threats.</p>
+                
+                <p>Currently pursuing advanced cybersecurity certifications while contributing to AI security platforms and developing fraud detection systems with 95% precision rates.</p>
             </div>
         </div>
     </section>
@@ -546,12 +653,34 @@
             <h2 class="section-title fade-in">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category fade-in">
+                    <h3><i class="fas fa-shield-alt"></i> Cybersecurity & AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MITRE ATT&CK</span>
+                        <span class="skill-tag">Incident Response</span>
+                        <span class="skill-tag">SIEM</span>
+                        <span class="skill-tag">Security ML Models</span>
+                        <span class="skill-tag">Fraud Detection</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
                     <h3><i class="fas fa-server"></i> Backend Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python 3.x</span>
                         <span class="skill-tag">FastAPI</span>
                         <span class="skill-tag">RESTful APIs</span>
                         <span class="skill-tag">OpenAPI/Swagger</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-tools"></i> Security Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microsoft Sentinel</span>
+                        <span class="skill-tag">Splunk</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Microsoft Defender</span>
+                        <span class="skill-tag">PowerShell</span>
                     </div>
                 </div>
                 
@@ -576,21 +705,12 @@
                 </div>
                 
                 <div class="skill-category fade-in">
-                    <h3><i class="fas fa-tools"></i> Development Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">CI/CD Pipelines</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category fade-in">
                     <h3><i class="fas fa-brain"></i> AI/ML Integration</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PyTorch</span>
                         <span class="skill-tag">TensorFlow</span>
                         <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">Vector Databases</span>
                         <span class="skill-tag">Pinecone</span>
                     </div>
                 </div>
@@ -617,6 +737,7 @@
                     <li>Developed database integration layer connecting PostgreSQL and vector databases for similarity matching</li>
                     <li>Deployed containerized applications using Docker and AWS EC2, implementing monitoring and logging</li>
                     <li>Collaborated through code reviews and Git workflows, contributing to open-source codebase</li>
+                    <li>Participated in technical discussions about software security and best practices</li>
                 </ul>
             </div>
             
@@ -632,6 +753,7 @@
                     <li>Monitored inventory management systems with strict adherence to security protocols, ensuring accurate data handling and rapid identification of potential anomalies</li>
                     <li>Analyzed workflow inefficiencies and collaborated with management to implement improvements, contributing to enhanced system responsiveness and proactive incident analysis</li>
                     <li>Developed automated Python reporting systems reducing manual work by 8 hours weekly through process optimization</li>
+                    <li>Resolved technical equipment issues in fast-paced environment using Wireshark and Python, ensuring smooth operations and minimizing downtime</li>
                     <li>Maintained detailed operational records and documented procedures accurately, aligning with best practices in technical documentation and compliance</li>
                     <li>Trained new associates on secure systems and processes, fostering well-prepared teams with heightened security awareness</li>
                 </ul>
@@ -646,23 +768,37 @@
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <h3 class="project-title">Production Fraud Detection API</h3>
-                    <p class="project-description">A scalable REST API serving real-time fraud predictions with machine learning integration.</p>
+                    <p class="project-description">A scalable REST API serving real-time fraud predictions with machine learning integration and advanced security monitoring.</p>
                     <ul class="project-features">
                         <li>Built scalable REST API using FastAPI serving real-time fraud predictions with 95% precision</li>
                         <li>Designed database schema and implemented data pipeline processing 10,000+ transactions</li>
                         <li>Deployed using Docker containers with automated CI/CD pipeline</li>
                         <li>Implemented comprehensive API documentation using OpenAPI/Swagger standards</li>
+                        <li>Integrated anomaly detection algorithms for enhanced security monitoring</li>
                     </ul>
                 </div>
                 
                 <div class="project-card fade-in">
                     <h3 class="project-title">Educational Content Recommendation System</h3>
-                    <p class="project-description">A microservices-based recommendation engine for educational content delivery.</p>
+                    <p class="project-description">A microservices-based recommendation engine for educational content delivery with built-in security features.</p>
                     <ul class="project-features">
                         <li>Developed microservices architecture for content-based recommendation engine</li>
                         <li>Built RESTful APIs with FastAPI backend handling user interactions and content delivery</li>
                         <li>Implemented vector similarity search using embeddings and semantic matching</li>
                         <li>Applied RAG architecture principles for content retrieval and recommendation logic</li>
+                        <li>Integrated security best practices for data protection and access control</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <h3 class="project-title">Personal Security Operations Lab</h3>
+                    <p class="project-description">Comprehensive cybersecurity lab environment for hands-on security analysis and incident response training.</p>
+                    <ul class="project-features">
+                        <li>Built virtual lab environment with Windows Server and client machines for security testing</li>
+                        <li>Installed and configured Microsoft Sentinel for log collection and analysis</li>
+                        <li>Practiced writing KQL queries for Windows Event Log analysis</li>
+                        <li>Set up home network lab with pfSense firewall for hands-on learning</li>
+                        <li>Completed packet analysis exercises and documented learning progress</li>
                     </ul>
                 </div>
             </div>
@@ -673,153 +809,24 @@
     <section id="education" class="section">
         <div class="container">
             <h2 class="section-title fade-in">Education & Certifications</h2>
-            <div class="education-item fade-in">
-                <h3>Georgia State University</h3>
-                <div class="degree">Bachelor of Arts, Economics (2024)</div>
-                <div class="coursework">
-                    <strong>Coursework:</strong> Data Engineering & ETL Pipelines, Statistical Methods, Mathematical Modeling
+            <div class="education-certifications">
+                <div class="education-item fade-in">
+                    <h3>Georgia State University</h3>
+                    <div class="degree">Bachelor of Arts, Economics (2023)</div>
+                    <div class="coursework">
+                        <strong>Coursework:</strong> Information Security, Network Security, Data Engineering & ETL Pipelines, Statistical Methods, Mathematical Modeling, Data Analysis
+                    </div>
                 </div>
-                <div class="certification">
-                    <i class="fas fa-certificate"></i> AWS Certified Machine Learning - Specialty (2025)
+                
+                <div class="certification-item fade-in">
+                    <h3>Current Certifications</h3>
+                    <div class="certification">
+                        <i class="fas fa-certificate"></i> AWS Certified Machine Learning - Specialty (2025)
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Morris Holder Jr. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/morris-holder-94408610a/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/morris198/" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:morrisholder00@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Active navigation highlighting
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Add typing effect to hero title
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Initialize typing effect after page load
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const heroTitle = document.querySelector('.hero h1');
-                if (heroTitle) {
-                    typeWriter(heroTitle, 'Morris Holder Jr', 150);
-                }
-            }, 500);
-        });
-
-        // Add dynamic background particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'absolute';
-            particle.style.width = Math.random() * 4 + 1 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.background = 'rgba(255, 255, 255, 0.3)';
-            particle.style.borderRadius = '50%';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.top = '100vh';
-            particle.style.pointerEvents = 'none';
-            particle.style.animation = `floatUp ${Math.random() * 3 + 2}s linear forwards`;
-            
-            document.querySelector('.hero').appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 5000);
-        }
-
-        // Add CSS animation for particles
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes floatUp {
-                to {
-                    transform: translateY(-100vh) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-            .nav-links a.active {
-                color: #667eea;
-                font-weight: 600;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Create particles periodically
-        setInterval(createParticle, 300);
-    </script>
-</body>
-</html>
+                
+                <div class="certification-item fade-in">
+                    <h3>Certifications in Progress</h3>
+                    <div class="cert-progress">
+                        <i class="fas fa-clock"></i> CompTIA CYSA+ (Sept 2025)
+                    </div
